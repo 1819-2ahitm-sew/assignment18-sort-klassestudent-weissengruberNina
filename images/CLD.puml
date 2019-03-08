@@ -1,0 +1,22 @@
+@startuml
+interface Comparable {
+{abstract} int compareTo(Student o)
+}
+
+class Klasse {
+int klassenbezeichnung
+Student[] students
+sortBubble()
+sortInsertion()
+}
+
+class Student {
+int katNr
+String vorname
+String nachname
+int compareTo(Student o)
+}
+
+Comparable <|.. Student
+Klasse o-- Student
+@enduml
