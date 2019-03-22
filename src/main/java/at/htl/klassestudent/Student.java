@@ -2,6 +2,7 @@ package at.htl.klassestudent;
 
 public class Student implements Comparable<Student> {
 
+    int katNr;
     private String vorname;
     private String nachname;
 
@@ -9,10 +10,12 @@ public class Student implements Comparable<Student> {
     }
 
     public Student(String vorname, String nachname) {
+        this();
         this.vorname = vorname;
         this.nachname = nachname;
     }
 
+    //region Getter and Setter
     public String getVorname() {
         return vorname;
     }
@@ -29,6 +32,14 @@ public class Student implements Comparable<Student> {
         this.nachname = nachname;
     }
 
+    public int getKatNr() {
+        return katNr;
+    }
+
+    public void setKatNr(int katNr) {
+        this.katNr = katNr;
+    }
+    //endregion
 
     @Override
     public int compareTo(Student o) {

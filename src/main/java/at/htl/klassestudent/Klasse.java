@@ -21,11 +21,37 @@ public class Klasse {
             students = new Student[1];
         } else {
             Student[] help = new Student[students.length + 1];
-            help[0] = students[0];
+            for (int i = 0; i < help.length - 1; i++) {
+                help[i] = students[i];
+            }
+            students = help;
         }
         students[students.length - 1] = student;
     }
 
+    public void grundSort() {
+
+        showArray();
+        for (int j = 0; j < students.length - 1; j++) {
+            for (int i = 0; i < students.length - 1; i++) {
+                if (students[i].compareTo(students[j]) < 0){
+                    Student help = students[i];
+                    students[i] = students[j];
+                    students[j] = help;
+                }
+            }
+            showArray();
+        }
+    }
+
+    public void showArray(){
+        for (Student student : students) {
+            System.out.print(student + " - ");
+        }
+        System.out.println();
+    }
+
+    //region Getter und Setter
     public String getKlassenbezeichnung() {
         return klassenbezeichnung;
     }
@@ -42,12 +68,11 @@ public class Klasse {
         this.students = students;
     }
 
+    //endregion
+
+
     @Override
     public String toString() {
-        return String.valueOf(klassenbezeichnung);
-    }
-
-    public void sortBubble(){
-
+        return klassenbezeichnung;
     }
 }
