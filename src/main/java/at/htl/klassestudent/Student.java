@@ -29,10 +29,17 @@ public class Student implements Comparable<Student> {
         this.nachname = nachname;
     }
 
+
+    @Override
     public int compareTo(Student o) {
-        if (this.nachname.equals(o.getNachname())) {
+        if (this.nachname.equals(o.getNachname())){
             return this.vorname.compareTo(o.getVorname());
         }
         return this.nachname.compareTo(o.getNachname());
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s, %s",nachname,vorname);
     }
 }
